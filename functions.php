@@ -18,12 +18,13 @@ function connect($username, $password, $host, $db_name){#reuse this code that's 
 //show_all_task.php
 //========================================================================================================
 function display_all_tasks($link, $userid){//good coding here
+//what is input and return value???
+
 	//echo "search";
-	if(!$_SESSION['userid']){
+	
+		//$sql = "SELECT * FROM task where status = 'open' and tasker_id != $userid;";
+		
 		$sql = "SELECT * FROM task where status = 'open';";
-	}else{
-		$sql = "SELECT * FROM task where status = 'open' and tasker_id != $userid;";
-	};
 
 	$result = mysql_query($sql, $link);
 	echo "<table border=1>";
@@ -34,5 +35,15 @@ function display_all_tasks($link, $userid){//good coding here
 	echo "</table>";
 
 };
+
+//=============================================================================================================
+
+Function query($sql,$username, $password, $host, $db_name) {
+	$link = connect($username, $password, $host, $db_name);
+	$result = mysql_query($sql, $link);
+	mysql_close($link);
+	echo "run";
+    return $result;
+}
 
 ?>

@@ -1,7 +1,7 @@
 <?php
-	session_start(); 
+
 	include 'include/functions.php';
-	if(!$_SESSION["login"]){header("Location: out.php");}
+	//if(!$_SESSION["login"]){header("Location: out.php");}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
@@ -29,13 +29,9 @@
 <h1>All Available tasks</h1>
 
 <?php
-$userid = $_SESSION['userid'];
 
-$link = connect($username, $password, $host, $db_name);
-
-display_all_tasks($link, $userid);
-
-mysql_close($link);
+$sql = "SELECT * FROM task where status = 'open';";
+query($sql,$username, $password, $host, $db_name);
 
 ?>
 </body>
