@@ -2,6 +2,7 @@
 	session_start(); 
 	include 'include/functions.php';
 	if(!$_SESSION["login"]){header("Location: out.php");}
+	//add change two 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
