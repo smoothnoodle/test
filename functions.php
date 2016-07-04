@@ -1,6 +1,6 @@
 <?php 
 
-include 'settings.php';
+//include 'settings.php';
 date_default_timezone_set('Australia/Brisbane');
 
 //Common on every page
@@ -45,5 +45,15 @@ Function query($sql,$username, $password, $host, $db_name) {
 	echo "run";
     return $result;
 }
+
+//=============================================================================================================
+
+function foo() {
+    $var1 = "ONe";
+    $var2 = "tWo";
+
+	return array($var1, $var2);
+    
+};
 
 ?>
