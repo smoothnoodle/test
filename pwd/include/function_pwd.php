@@ -36,8 +36,26 @@ function check_old_pwd($link, $user_id){
 	}else{
 		echo "user doesn't exist";
 	}
+}
+
+
+//crack_pwd.php
+//===========================================================================================
+function crack_passwd($user_encrypwd){
 	
+	$pwd_generator = 0;
 	
+	while($pwd_generator <= 10000){
+		if (password_verify($pwd_generator , $user_encrypwd))
+		{
+			return $pwd_generator;
+			
+		} else {
+			
+			//echo $pwd_generator."<br>";  
+		}
+		$pwd_generator=$pwd_generator + 1; 		
+	}
 }
 //==============================================================================================
 
@@ -870,8 +888,6 @@ function display_maker_stat($link, $userid, $result, $limit){
 		echo "</table>";
 	};
 };
-
-
 
 //display_history.php
 //==========================================================================================================
